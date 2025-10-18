@@ -6,12 +6,11 @@
 /*   By: luimarti <luimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 12:37:53 by lucho             #+#    #+#             */
-/*   Updated: 2025/10/18 16:24:51 by luimarti         ###   ########.fr       */
+/*   Updated: 2025/10/18 17:37:06 by luimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// (INCLUIR MI LIBFT PARA EL ISDIGIT!!!)
 
 int	is_valid_number(const char *str)
 {

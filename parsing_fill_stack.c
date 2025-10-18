@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_handling.c                                   :+:      :+:    :+:   */
+/*   parsing_fill_stack.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luimarti <luimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 13:51:14 by lucho             #+#    #+#             */
-/*   Updated: 2025/10/18 16:23:34 by luimarti         ###   ########.fr       */
+/*   Created: 2025/10/18 17:46:49 by luimarti          #+#    #+#             */
+/*   Updated: 2025/10/18 17:48:21 by luimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,59 +56,17 @@ int	ft_fill_stack(t_node **stack, int value)
 	return (1);
 }
 
-void	rotate_to_top(t_node **stack, int index, char stack_name)
+void	ft_free(t_node **stack)
 {
-	int	pos;
-	int	size;
+	t_node	*current;
+	t_node	*temp;
 
-	pos = get_position_of_index(*stack, index);
-	if (pos == -1)
-		return ;
-	size = ft_stack_size(*stack);
-	while ((*stack)->index != index)
+	current = *stack;
+	while (current)
 	{
-		if (pos <= size / 2)
-		{
-			if (stack_name == 'a')
-				ra(stack);
-			else if (stack_name == 'b')
-				rb(stack);
-		}
-		else
-		{
-			if (stack_name == 'a')
-				rra(stack);
-			else if (stack_name == 'b')
-				rrb(stack);
-		}
+		temp = current;
+		current = current->next;
+		free(temp);
 	}
-}
-
-void	bring_to_top(t_node **stack, int index, char stack_name)
-{
-	if (!stack || !*stack)
-		return ;
-	rotate_to_top(stack, index, stack_name);
-}
-
-void	bring_min_to_top(t_node **stack, int min_index)
-{
-	int	size;
-
-	size = ft_stack_size(*stack);
-	if (!stack || !*stack)
-		return ;
-	if (min_index < 0 || min_index >= size)
-		return ;
-	if (min_index <= size / 2)
-	{
-		while (min_index-- > 0)
-			ra(stack);
-	}
-	else
-	{
-		min_index = size - min_index;
-		while (min_index-- > 0)
-			rra(stack);
-	}
+	*stack = NULL;
 }
