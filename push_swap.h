@@ -6,7 +6,7 @@
 /*   By: luimarti <luimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 01:44:49 by lucho             #+#    #+#             */
-/*   Updated: 2025/10/18 16:57:52 by luimarti         ###   ########.fr       */
+/*   Updated: 2025/10/21 14:54:37 by luimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	assign_index(t_node *stack);
 // Sorting algorithm
 // ───────────────────────────────
 
+int		already_sorted(t_node *stack);
 void	sort_two(t_node **stack_a);
 void	sort_three_actions(t_node **stack_a, int first, int second, int third);
 void	sort_three(t_node **stack_a);

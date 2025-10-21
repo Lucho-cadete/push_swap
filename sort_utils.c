@@ -6,7 +6,7 @@
 /*   By: luimarti <luimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:50:19 by luimarti          #+#    #+#             */
-/*   Updated: 2025/10/18 17:52:12 by luimarti         ###   ########.fr       */
+/*   Updated: 2025/10/21 14:48:34 by luimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	sort_dispatcher(t_node **stack_a, t_node **stack_b)
 	int	size;
 
 	size = ft_stack_size(*stack_a);
+	if (size <= 1 || already_sorted(*stack_a))
+		return ;
 	if (size == 2)
 		sort_two(stack_a);
 	else if (size == 3)
