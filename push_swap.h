@@ -6,7 +6,7 @@
 /*   By: luimarti <luimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 01:44:49 by lucho             #+#    #+#             */
-/*   Updated: 2025/10/21 14:54:37 by luimarti         ###   ########.fr       */
+/*   Updated: 2025/10/24 14:26:21 by luimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <stdio.h>
-# include <ctype.h>
 
 typedef struct s_node
 {
